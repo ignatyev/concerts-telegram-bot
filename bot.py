@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 # 455139656:AAE9id16VLNGI8gz4dBtCSs2WE8Jp1zsu1k
-
+import json
 import threading
 
 import os
+import urllib2
+
 import telebot
 from telebot import types
 
@@ -15,8 +17,8 @@ bot = telebot.TeleBot("455139656:AAE9id16VLNGI8gz4dBtCSs2WE8Jp1zsu1k")
 
 @bot.message_handler(content_types=["text"])
 def process(message):
-    subscribe = u'Подписаться на оповещения'
-    propose = u'Предложить концерт'
+    subscribe = 'Подписаться на оповещения'
+    propose = 'Предложить концерт'
 
     if message.text.encode('utf-8').startswith('/event'):
         save_event(message.text)
@@ -53,7 +55,7 @@ def save_event(event):
 
 def set_broadcast_timer():
     broadcast_all()
-    timer = threading.Timer(3, set_broadcast_timer)
+    timer = threading.Timer(30, set_broadcast_timer)
     timer.setDaemon(True)
     timer.start()
 
@@ -63,8 +65,20 @@ def broadcast_all():
         with open('users.txt', 'r') as users:
             with open('events.txt', 'r') as events:
                 for user in users.readlines():
-                    for event in events.readlines():
-                        bot.send_message(user, event)
+                    # bot.send_message(user, events.read)
+                    events_from_kudago = get_events_from_kudago()
+                    print events_from_kudago
+                    bot.send_message(user, events_from_kudago)
+
+
+def get_events_from_kudago():
+    get = urllib2.urlopen("https://kudago.com/public-api/v1.3/events/").read()
+    events = json.loads(get)
+    results = events['results']
+    titles = []
+    for result in results:
+        titles.append(result['title'].encode('utf-8'))
+    return str('\n'.join(titles))
 
 
 if __name__ == '__main__':
