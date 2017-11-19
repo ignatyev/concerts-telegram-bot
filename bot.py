@@ -9,6 +9,7 @@ import urllib2
 import telebot
 from telebot import types
 
+from event.EventStorage import read_all_events
 # from weather import Weather
 
 # weather = Weather()
@@ -36,7 +37,7 @@ def process(message):
 
 
 def save_user(user_id):
-    print 'saving user: ' + str(user_id)
+    print('saving user: ' + str(user_id))
     users = open('users.txt', 'a')
     users.write(str(user_id))
     users.write('\n')
@@ -44,7 +45,7 @@ def save_user(user_id):
 
 
 def save_event(event):
-    print 'saving event: ' + event
+    print('saving event: ' + event)
     with open('events.txt', 'a') as events:
         events.write(event)
         events.write('\n')
@@ -60,25 +61,27 @@ def set_broadcast_timer():
     timer.start()
 
 
+
+
 def broadcast_all():
     if os.path.isfile('users.txt') and os.path.isfile('events.txt'):
         with open('users.txt', 'r') as users:
-            with open('events.txt', 'r') as events:
+            for event in read_all_events():
                 for user in users.readlines():
-                    # bot.send_message(user, events.read)
-                    events_from_kudago = get_events_from_kudago()
-                    print events_from_kudago
-                    bot.send_message(user, events_from_kudago)
+                    bot.send_message(user, event.artist)
+                    # events_from_kudago = get_events_from_kudago()
+                    # print(events_from_kudago)
+                    # bot.send_message(user, events_from_kudago)
 
 
-def get_events_from_kudago():
-    get = urllib2.urlopen("https://kudago.com/public-api/v1.3/events/").read()
-    events = json.loads(get)
-    results = events['results']
-    titles = []
-    for result in results:
-        titles.append(result['title'].encode('utf-8'))
-    return str('\n'.join(titles))
+# def get_events_from_kudago():
+#     get = urllib2.urlopen("https://kudago.com/public-api/v1.3/events/").read()
+#     events = json.loads(get)
+#     results = events['results']
+#     titles = []
+#     for result in results:
+#         titles.append(result['title'].encode('utf-8'))
+#     return str('\n'.join(titles))
 
 
 if __name__ == '__main__':
