@@ -5,7 +5,6 @@ import telebot
 from telebot import types
 from event.EventStorage import read_all_events
 from event.EventStorage import save_events
-from event.EventStorage import clear_events
 from user.UserStorage import read_all_users, save_user
 
 bot = telebot.TeleBot('455139656:AAE9id16VLNGI8gz4dBtCSs2WE8Jp1zsu1k')
