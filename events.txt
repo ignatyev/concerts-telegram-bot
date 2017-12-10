@@ -1,1 +1,1 @@
-timeA placeA artistA 123
+[{"time": "t", "price": 1, "sent_to": ["256652425"], "place": "p", "artist": "e"}]
