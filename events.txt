@@ -1,1 +1,1 @@
-[{"time": "t", "price": 1, "sent_to": ["256652425"], "place": "p", "artist": "e"}]
+[{"sent_to": [256652425], "artist": "e", "place": "p", "time": "t", "price": 1, "genres": ["rock"]}]
