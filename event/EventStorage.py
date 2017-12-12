@@ -4,13 +4,13 @@ import os
 
 from event.Event import Event
 
-EVENTS_TXT = 'events.txt'
+EVENTS_FILE = 'events.json'
 
 
 def read_all_events():
     result = []
-    if os.stat(EVENTS_TXT).st_size > 0:
-        events = open(EVENTS_TXT, 'r')
+    if os.stat(EVENTS_FILE).st_size > 0:
+        events = open(EVENTS_FILE, 'r')
         json_loads = json.load(events)
         for json_load in json_loads:
             event = Event(None, None, None, None, None)
@@ -24,7 +24,7 @@ def save_events(events):
     dumps_list = []
     for event in events:
         dumps_list.append(event.__dict__)
-    events_file = open('events.txt', 'w')
+    events_file = open(EVENTS_FILE, 'w')
     json.dump(dumps_list, events_file)
     events_file.close()
 

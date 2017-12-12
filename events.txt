@@ -1,1 +1,0 @@
-[{"sent_to": [256652425], "artist": "e", "place": "p", "time": "t", "price": 1, "genres": ["rock"]}]

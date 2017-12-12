@@ -1,13 +1,57 @@
 # coding=utf-8
-import telebot
+from array import array
 
+# Lists
 
-bot = telebot.TeleBot('455139656:AAE9id16VLNGI8gz4dBtCSs2WE8Jp1zsu1k')
+# lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+#
+# lst.remove(3)
+#
+# lst.append(6)
+#
+# lst.remove(60)
+#
+# print(len(lst))
+#
+# arr = array('i', lst)
+#
+# print(lst.__sizeof__())
+# print(arr.__sizeof__())
 
+# Sets
 
-@bot.message_handler(content_types=['text'])
-def repeat_all_messages(message):
-    bot.send_message(message.chat.id, message.text)
+# set1 = {1, 2, 3, 4}
+# set2 = {2, 3, 4, 5}
+#
+# set1.add(1)
+#
+# set1.remove(1)
+#
+# print(set1.difference([2, 3]))
+# print(set1.intersection(set2))
+#
+# print(set1)
 
+# hash
+# hash("abc") => 50
+# [ , , , , ,..., "abc", ... ]
+# set.remove("abc")
+# hash("123")
+# [ , , , , ,..., ["abc", "123"], ... ]
 
-bot.polling()
+# Dictionary
+
+# [ , , , , ,..., "abc" -> 1, ... ]
+#
+# dct = {'a': 1, 'b': 2}
+#
+# print(dct.get('c'))
+
+# IF
+
+# if 1 > 2:
+#     print('1 > 2')
+# elif 2 > 3:
+#     print('2 > 3')
+# else:
+#     print('none of')
