@@ -12,11 +12,11 @@ def read_all_events():
     if os.stat(EVENTS_FILE).st_size > 0:
         events = open(EVENTS_FILE, 'r')
         json_loads = json.load(events)
+        events.close()
         for json_load in json_loads:
             event = Event(None, None, None, None, None)
             event.__dict__.update(json_load)
             result.append(event)
-        events.close()
     return result
 
 

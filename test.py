@@ -1,8 +1,17 @@
 # coding=utf-8
 from array import array
 
-# Lists
+# IF
 
+if 1 > 2:
+    print('1 > 2')
+elif 2 > 3:
+    print('2 > 3')
+else:
+    print('none of')
+
+# Lists
+#
 # lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 #
 # lst.remove(3)
@@ -19,7 +28,7 @@ from array import array
 # print(arr.__sizeof__())
 
 # Sets
-
+#
 # set1 = {1, 2, 3, 4}
 # set2 = {2, 3, 4, 5}
 #
@@ -34,24 +43,20 @@ from array import array
 
 # hash
 # hash("abc") => 50
+# hash("cba") => 50
 # [ , , , , ,..., "abc", ... ]
 # set.remove("abc")
 # hash("123")
-# [ , , , , ,..., ["abc", "123"], ... ]
+# [ , , , , ,..., ["abc", "cba"], ... ]
 
 # Dictionary
 
 # [ , , , , ,..., "abc" -> 1, ... ]
 #
-# dct = {'a': 1, 'b': 2}
+dct = {'a': 1, 'b': 2}
 #
-# print(dct.get('c'))
+print(dct.get('a'))
 
-# IF
+# https://github.com/ignatyev/concerts-telegram-bot
 
-# if 1 > 2:
-#     print('1 > 2')
-# elif 2 > 3:
-#     print('2 > 3')
-# else:
-#     print('none of')
+@simple_bobot

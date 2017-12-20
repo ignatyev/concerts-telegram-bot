@@ -1,1 +1,110 @@
-[{"user_id": 256652425, "genres": ["rock"]}]
+[
+  {
+    "genres": [
+      "rock"
+    ],
+    "user_id": 256652425
+  },
+  {
+    "genres": [
+      "jazz"
+    ],
+    "user_id": 172517455
+  },
+  {
+    "genres": [
+      "jazz"
+    ],
+    "user_id": 395820480
+  },
+  {
+    "genres": [
+      "jazz"
+    ],
+    "user_id": 198493518
+  },
+  {
+    "genres": [
+      "jazz"
+    ],
+    "user_id": 423996068
+  },
+  {
+    "genres": [
+      "rock"
+    ],
+    "user_id": 198493518
+  },
+  {
+    "genres": [
+      "pop"
+    ],
+    "user_id": 172517455
+  },
+  {
+    "genres": [
+      "rock"
+    ],
+    "user_id": 423996068
+  },
+  {
+    "genres": [
+      "rock"
+    ],
+    "user_id": 395820480
+  },
+  {
+    "genres": [
+      "jazz"
+    ],
+    "user_id": 337870283
+  },
+  {
+    "genres": [
+      "pop"
+    ],
+    "user_id": 485403551
+  },
+  {
+    "genres": [
+      "jazz"
+    ],
+    "user_id": 395820480
+  },
+  {
+    "genres": [
+      "jazz"
+    ],
+    "user_id": 485403551
+  },
+  {
+    "genres": [
+      "rock"
+    ],
+    "user_id": 395820480
+  },
+  {
+    "genres": [
+      "jazz"
+    ],
+    "user_id": 423996068
+  },
+  {
+    "genres": [
+      "rock"
+    ],
+    "user_id": 395820480
+  },
+  {
+    "genres": [
+      "rock"
+    ],
+    "user_id": 485403551
+  },
+  {
+    "genres": [
+      "jazz"
+    ],
+    "user_id": 485403551
+  }
+]
